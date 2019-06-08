@@ -1,6 +1,7 @@
 /*Compiled by Angela Lawece V. Fernandez */
 body {
-	margin: 0;
+    margin: 0;
+    background-color: black;
 }
 a {
 	text-decoration: none;
@@ -22,7 +23,7 @@ button {
     height: 4px;
     background: black;
 }
-::-webkit-scrollbar-thumb 
+::-webkit-scrollbar-thumb {
     background-color: #0076ff;
     border-radius: 0px;
     -webkit-border-radius: 0px;
@@ -96,7 +97,7 @@ p {
 #infospace {
     width: 35%;
     float: right;
-    padding: 0% 2.5%;
+    padding: 0% 1%;
     margin-right: 3%;
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
@@ -114,37 +115,10 @@ p {
     border-left: 1px solid #e5e5e5;
     border-right: 1px solid transparent;
 }
-#infospace1 {
-    width: 35%;
-    float: left;
-    padding: 10% 5% 0% 2.5%;
-    margin-left: 3%;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    border-right: 1px solid transparent;
-    border-left: 1px solid #e5e5e5;
-    padding-bottom: 45px;
-}
-#imagecontainer1 {
-    float: right;
-    width: 49%;
-    margin-right: 3%;
-    padding: 0% 0% 0% 2%;
-    border-top: 1px solid transparent;
-    border-bottom: 1px solid transparent;
-    border-right: 1px solid #e5e5e5;
-    border-left: 1px solid transparent;
-}
-
 #imagecontainer img {
     width: 100%;
     display: block;
 }
-#imagecontainer1 img {
-    width: 100%;
-    display: block;
-}
-
 .fullbackground {
     padding: 20px 20px 20px 40px;
     text-align: center;
@@ -306,7 +280,7 @@ footer img {
 }
 #hero {
 	height: 250px;
-    background: url(cssimages/angelofdeath.jpg) no-repeat center center fixed;
+    background: url(cssimages/tower.jpg) no-repeat center center fixed;
 	padding: 20px;
 	text-align: center;
 	font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
@@ -362,7 +336,7 @@ footer img {
 	content: '\e70e';
 }
 div#formcontainer {
-    padding: 100px 0px;
+    padding:  0px;
 }
 #formcontainer input.inputfield {
     background-color: rgba(0, 0, 0, 0.7);
@@ -384,7 +358,7 @@ div#formcontainer {
     backdrop-filter: blur(10px);
 }
 #final {
-    background:black;
+    background-image: url(cssimages/group.jpg);
 }
 #final h1 {
     text-align: center;
@@ -447,10 +421,6 @@ div#formcontainer {
     font-weight: 100;
     letter-spacing: 1px;
     font-size: 40px;
-}
-
-table {
-    border: none;
 }
 h3 {
     color: white;
