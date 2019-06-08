@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 <style>
@@ -58,8 +59,8 @@
 	<body>
 	<header>
 		<!----	<h1 style="display: inline;"> <img id="logo" src="assets\images\ghostbladeicon.png"/></h1> --->
-			<button style="display: inline-block;float: right; margin-left: -5px; margin-top: 4px; margin-right: 30px;" class="userbutt" onclick="redirect()">Forgot Password</button>
-				<form action="dashboard.php" method="POST" style="display: inline;">
+			<a href="forgotpassword.php"><button style="display: inline-block;float: right; margin-left: -5px; margin-top: 4px; margin-right: 30px;" class="userbutt" onclick="redirect()">Forgot Password</button></a>
+				<form action="download.php" method="POST" style="display: inline;">
 				<table border="0" style="display: inline; float: right;">
 					<tr style="display: inline;">
 					<td style="color: #fff">Username</td>
@@ -70,7 +71,7 @@
 					<td align="left"><input class="inputfield" type="password" name="password" style="background: url(assets/images/mdl2/lock.png); background-color: rgba(100, 100, 100, 0.3); background-size: 30px; padding-left: 35px; background-repeat: no-repeat;" size="20" maxlength="50" /></td>
 					</tr>
 					<tr style="display: inline;">
-					<td style="border-right: 1px solid #e4e4e4; padding-right: 10px;" colspan="2" align="center"><input type="submit" value="Log In" class="button"/></td>
+					<td style="border-right: 1px solid #e4e4e4; padding-right: 10px;" colspan="2" align="center"><input type="submit" name="login_user" value="Log In" class="button"/></td>
 					</tr>
 					<tr style="display: inline;">
 					<td colspan="2" align="center">
@@ -78,15 +79,13 @@
 					</tr>
 				</table>
 			</form>
-
 			<nav id="headnav">
-				<a href="index.php">Home</a>
-				<a id="current">Download</a>
+				<a id="current">Home</a>
+				<a href="download.php">Download</a>
 				<a href="classes.php">Game Info</a>
-				<a href="events.php">Events</a>
-				<a href="forum.php">Forum</a>
-				<a href="profile.php">Profile</a>
+				<a href="forum.html">Forum</a>
 			</nav>
+			<h3><?php include('errors.php'); ?></h3>
 		</header>
 		<section id="content">
 			<aside id="infospace1">

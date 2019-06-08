@@ -1,3 +1,4 @@
+<?php include('server.php') ?>
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -6,7 +7,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/png" href="assets/images/ghostbladeicon.png">
 		<!-- CSS -->
-		<link href="assets/css/darktheme.css" rel="stylesheet"> <!-- Dark theme -->
+		<link href="assets/css/dark.css" rel="stylesheet"> <!-- Dark theme -->
 		<!-- <link href="assets/css/styles-light.css" rel="stylesheet"> Light theme -->
 		<link rel="stylesheet" type="text/css" href="assets/css/textrotator.css"/>
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
@@ -32,15 +33,15 @@
     			alert("Invalid or empty credentials.\nPlease type in your credentials and click the \"Log In\" button");
 			}
 			function redirect() {
-				window.location="dashboard.php";
+				window.location="profile.php";
 			}
 		</script>
 	</head>
 	<body>
 		<header>
 		<!----	<h1 style="display: inline;"> <img id="logo" src="assets\images\ghostbladeicon.png"/></h1> --->
-			<button style="display: inline-block;float: right; margin-left: -5px; margin-top: 4px; margin-right: 30px;" class="userbutt" onclick="redirect()">Forgot Password</button>
-				<form action="dashboard.php" method="POST" style="display: inline;">
+			<a href="forgotpassword.php"><button style="display: inline-block;float: right; margin-left: -5px; margin-top: 4px; margin-right: 30px;" class="userbutt" onclick="redirect()">Forgot Password</button></a>
+				<form action="index.php" method="POST" style="display: inline;">
 				<table border="0" style="display: inline; float: right;">
 					<tr style="display: inline;">
 					<td style="color: #fff">Username</td>
@@ -51,7 +52,7 @@
 					<td align="left"><input class="inputfield" type="password" name="password" style="background: url(assets/images/mdl2/lock.png); background-color: rgba(100, 100, 100, 0.3); background-size: 30px; padding-left: 35px; background-repeat: no-repeat;" size="20" maxlength="50" /></td>
 					</tr>
 					<tr style="display: inline;">
-					<td style="border-right: 1px solid #e4e4e4; padding-right: 10px;" colspan="2" align="center"><input type="submit" value="Log In" class="button"/></td>
+					<td style="border-right: 1px solid #e4e4e4; padding-right: 10px;" colspan="2" align="center"><input type="submit" name="login_user" value="Log In" class="button"/></td>
 					</tr>
 					<tr style="display: inline;">
 					<td colspan="2" align="center">
@@ -59,15 +60,13 @@
 					</tr>
 				</table>
 			</form>
-
 			<nav id="headnav">
 				<a id="current">Home</a>
 				<a href="download.php">Download</a>
 				<a href="classes.php">Game Info</a>
-				<a href="events.php">Events</a>
-				<a href="forum.php">Forum</a>
-				<a href="profile.php">Profile</a>
+				<a href="forum.html">Forum</a>
 			</nav>
+			<h3><?php include('errors.php'); ?></h3>
 		</header>
 		<section id="filler">
 		</section>
@@ -91,47 +90,31 @@
 		<section class="fullbackground" id="final">
 			<h1>Join the Adventure!</h1>
 			<div id="formcontainer">
-				<form action="" method="post" style="display: inline;">
+				<form action="index.php" method="post" style="display: inline;">
 					<table border="0" style="display: inline; margin: 0 auto">
-						<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="text" name="firstName_field" size="20" placeholder="First Name"  maxlength="50"></td>
-							</tr>
-							<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="text" name="lastName_field" placeholder="Last Name" size="20" maxlength="50" /></td>
-							</tr>
-						</tr>
+						<div class="input-group">
+							<input class="inputfield" type="text" name="username" size="20" placeholder="username"  maxlength="50" value="<?php echo $username; ?>">
+						</div>
+						<br>
+						<div class="input-group">
+							<input class="inputfield" type="text" name="email" value="<?php echo $email; ?>" placeholder="email" size="20" maxlength="50" /></td>
+						</div>
+						<br>
 					</table>
 					<table border="0" style="display: grid; margin: 0 auto">
-						<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="date" name="firstName_field"  placeholder="Birthday"  maxlength="50"></td>
-							</tr>
-							<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type ="dropdown" name="lastName_field" size="20" maxlength="50" value="Gender"/></td>
-						</tr>
-						</tr>
+						<div class="input-group">
+							<input class="inputfield" type="password" name="password_1" size="20" placeholder="password"  maxlength="50"></td>
+						</div>
+						<br>
+						<div class="input-group">
+							<input class="inputfield" type="password" name="password_2" placeholder="confirm password" size="20" maxlength="50" /></td>
+						</div>
+						<br>
 					</table>
 					<table border="0" style="display: grid; margin: 0 auto">
-						<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="text" name="firstName_field" size="20" placeholder="Username"  maxlength="50"></td>
-							</tr>
-							<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="text" name="lastName_field" value="@email.com" placeholder="Email" size="20" maxlength="50" /></td>
-							</tr>
-						</tr>
-					</table>
-					<table border="0" style="display: grid; margin: 0 auto">
-						<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="password" name="firstName_field" size="20" placeholder="Password"  maxlength="50"></td>
-							</tr>
-							<tr style="display: inline;">
-							<td align="left"><input class="inputfield" type="password" name="lastName_field" placeholder="Confirm Password" size="20" maxlength="50" /></td>
-							</tr>
-						</tr>
-					</table>
-					<table border="0" style="display: grid; margin: 0 auto">
-					<tr style="display: inline;">
-						<td colspan="2" align="center"><input type="submit" value="Create New Account" class="button"/></td>
-						</tr>
+					<div class="input-group">
+						<input type="submit" name="reg_user" value="Sign Up" class="button"/>
+					</div>
 					</table>
 				</form>
 			</div>

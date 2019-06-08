@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Edit Profile | Ghostblade</title>
+		<title>Profile | Ghostblade</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="icon" type="image/png" href="assets/images/ghostbladeicon.png">
@@ -52,35 +52,18 @@
 		</header>
 		<br><br><br><br><br>
 		<section id="hero">
-			<h1 class="header"><span class="rotate">Create Your Profile, Update Your Profile, Have A Good Day!</h1>
+			<h1 class="header"><span class="rotate">Welcome To Your Profile, Have A Good Day!</h1>
 		</section>
 		<section id="content">
 			<div id="imagecontainer">
 				<div id="image1container" class="images">
-					<img src="assets\css\cssimages\desk.jpg"\>
+					<img src="assets\images\painting1.jpg"\>
 				</div>
 			</div>
 			<aside id="infospace">
-				<div id="formcontainer">
-				<form action="profile.php" method="post" style="display: inline;">
-					<h2>Enter Your Information</h2>
-					<h3><?php include('errors.php'); ?></h3>
-						<div class="input-group">
-							<input class="inputfield" type="text" name="name" size="20" placeholder="Full Name"  maxlength="50"></td>
-						</div>
-						<br>
-						<div class="input-group">
-							<input class="inputfield" type="email" name="email" placeholder="E-mail Address" size="20" maxlength="50" /></td>
-						</div>
-						<br>
-						<div class="input-group">
-							<input class="inputfield" type="text" name="bio" placeholder="Enter Bio" size="20" maxlength="150" /></td>
-						</div>
-						<br>
-						<input type="submit" name="reg_user" value="Update profile" class="button"/>
-				</form>
-				
-			</div>
+                    <h2>Name:</h2><?php echo "$name" ?>
+                    <h2>E-mail Address:</h2>
+                    <h2>Bio:</h2>
 					
 			</aside>
 		</section>

@@ -1,23 +1,15 @@
-<?php 
+<?php
+					function OpenCon()
+					{
+						$dbhost = "localhost";
+						$dbuser = "root";
+						$dbpass = "axelle";
+						$db = "ghostblade";
 
-    function OpenCon() 
-    {
-        $dbhost = "localhost";
-        $dbuser = "ghostblade";
-        $dbpassword = "admin";
-        $db = "iacademy";
-        
-        $conn = new mysqli($dbhost, $dbuser, $dbpassword, $db);
-
-        return $conn;
-    }
-
-    // Password: admin
-    // UUID: ZRNQztMsdyniRtCm
-
-    function CloseCon($conn) {
-        $conn -> close();
-    }
-?>
-
-
+						$conn = new mysqli($dbhost,$dbuser,$dbpass,$db) or die("Connect failed:%s\n".$conn->error);
+						return $conn;
+					}
+					function CloseCon($conn){
+						$conn->close();
+					}
+				?>
